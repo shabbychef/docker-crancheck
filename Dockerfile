@@ -25,7 +25,7 @@ RUN (rm -rf /var/lib/apt/lists/* ; \
  apt-get update -y -qq; \
  apt-get update --fix-missing ; \
  DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt-get install -y --no-install-recommends -q \
-   libxml2-dev libcurl4-gnutls-dev libssl-dev pkg-config libssh2-1-dev ; \
+   libxml2-dev libcurl4-gnutls-dev libssl-dev pkg-config libssh2-1-dev pandoc ghostscript qpdf ; \
  apt-get clean -y ; \
  [ -f /usr/local/bin/install.r ] || ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r ; \
  [ -f /usr/local/bin/install2.r ] || ln -s /usr/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r ; \
