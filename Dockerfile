@@ -12,7 +12,8 @@
 
 #####################################################
 # preamble# FOLDUP
-FROM rocker/r-devel 
+#FROM rocker/r-devel 
+FROM rocker/drd
 MAINTAINER Steven E. Pav, shabbychef@gmail.com
 USER root
 # UNFOLD
