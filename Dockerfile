@@ -12,7 +12,8 @@
 
 #####################################################
 # preamble# FOLDUP
-FROM rocker/r-devel 
+#FROM rocker/r-devel 
+FROM rocker/drd 
 MAINTAINER Steven E. Pav, shabbychef@gmail.com
 USER root
 # UNFOLD
@@ -54,7 +55,7 @@ ENV _R_CHECK_DOT_INTERNAL_ TRUE
 #####################################################
 # entry and cmd# FOLDUP
 # always use array syntax:
-ENTRYPOINT ["/usr/bin/R","CMD","check","--as-cran","--output=/tmp"]
+ENTRYPOINT ["/usr/local/bin/Rdevel","CMD","check","--as-cran","--output=/tmp"]
 
 # ENTRYPOINT and CMD are better together:
 CMD ["/srv/*.tar.gz"]
