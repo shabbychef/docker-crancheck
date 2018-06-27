@@ -30,13 +30,16 @@ RUN (rm -rf /var/lib/apt/lists/* ; \
  DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt-get install -y --no-install-recommends -q \
  wget curl libxml2-dev libcurl4-gnutls-dev libssl-dev pkg-config libssh2-1-dev \
  liblapack-dev libblas-dev \
+ libgs9 texlive-base texlive-binaries \
+ libcupsimage2 libcups2 \
+ texlive-latex-extra texlive-latex-base texlive-fonts-recommended texlive-fonts-extra \
  pandoc ghostscript qpdf ; \
  apt-get clean -y ; \
  sync ; \
  mkdir -p /usr/local/lib/R/site-library ; \
  chmod -R 777 /usr/local/lib/R/site-library ; \
  sync ; \
- /usr/local/bin/install.r docopt drat devtools )
+ /usr/local/bin/install.r docopt drat devtools Rcpp testthat roxygen2 devtools knitr formatR codetools )
 
 WORKDIR /srv
 
