@@ -15,7 +15,9 @@
 #FROM rocker/r-devel 
 #FROM rocker/drd
 #FROM shabbychef/rvers:3.2.5
-FROM shabbychef/rbranch:3.3
+#FROM shabbychef/rbranch:3.3
+# what a nightmare.
+FROM rocker/r-ver:3.4
 MAINTAINER Steven E. Pav, shabbychef@gmail.com
 USER root
 # UNFOLD
@@ -39,7 +41,7 @@ RUN (rm -rf /var/lib/apt/lists/* ; \
  mkdir -p /usr/local/lib/R/site-library ; \
  chmod -R 777 /usr/local/lib/R/site-library ; \
  sync ; \
- /usr/local/bin/install.r docopt drat devtools Rcpp testthat roxygen2 devtools knitr formatR codetools )
+ /usr/local/bin/install.r docopt drat devtools Rcpp testthat roxygen2 knitr formatR codetools )
 
 WORKDIR /srv
 
@@ -65,7 +67,7 @@ WORKDIR /srv
 # entry and cmd# FOLDUP
 # always use array syntax:
 #ENTRYPOINT ["/usr/local/bin/Rdevel","CMD","check","--as-cran","--output=/tmp"]
-ENTRYPOINT ["/usr/bin/R","CMD","check","--as-cran","--output=/tmp"]
+ENTRYPOINT ["/usr/local/bin/R","CMD","check","--as-cran","--output=/tmp"]
 
 # ENTRYPOINT and CMD are better together:
 CMD ["/srv/*.tar.gz"]
