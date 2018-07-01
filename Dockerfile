@@ -16,8 +16,9 @@
 #FROM rocker/drd
 #FROM shabbychef/rvers:3.2.5
 #FROM shabbychef/rbranch:3.3
+#FROM rocker/r-ver:3.4
 # what a nightmare.
-FROM rocker/r-ver:3.4
+FROM r-base:3.5.0
 MAINTAINER Steven E. Pav, shabbychef@gmail.com
 USER root
 # UNFOLD
